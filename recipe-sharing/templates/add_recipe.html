@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+</head>
+<body>
+    <h1>Add Recipe</h1>
+    {% if warning %}
+        <p style="color: red;">{{ warning }}</p>
+    {% endif %}
+    <form method="post">
+        {% if recipe_id %}
+            <input type="hidden" id="recipe_id" name="recipe_id" value="{{ recipe_id }}">
+        {% endif %}
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="ingridents">Ingridents:</label><br>
+        <input type="text" id="ingridents" name="ingridents"><br>
+        <label for="How">How:</label><br>
+        <textarea id="How" name="How"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/">Back to Recipes</a>
+</body>
+</html>

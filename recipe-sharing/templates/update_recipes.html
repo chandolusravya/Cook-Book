@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Recipe</title>
+</head>
+<body>
+    <h1>Update Recipe</h1>
+    <form method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ recipe.name }}"><br>
+        <label for="ingridents">Ingridents:</label><br>
+        <input type="text" id="ingridents" name="ingridents" value="{{ recipe.ingridents}}"><br>
+        <label for="How">How to Cook:</label><br>
+        <textarea id="How" name="How">{{ recipe.How }}</textarea><br>
+        <input type="submit" value="Update Recipe">
+    </form>
+    <a href="/">Back to Recipes</a>
+</body>
+</html>
