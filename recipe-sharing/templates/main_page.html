@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>COOK BOOK</title>
+    
+</head>
+<body>
+    <h1>welcome to COOK-BOOK!!</h1>
+    <h2>Recipes for healthy lifestyle</h2>
+    
+    {% if warning %}
+      
+      <p id="warning" style="color: green;">{{ warning }}</p> 
+    {% endif %}
+
+    <ul>
+        {% for recipe in recipes %}
+        <li>
+            <strong>Name:</strong> {{ recipe.name }} <br>
+            <strong>Ingridents:</strong> {{ recipe.ingridents }} <br>
+            <strong>How:</strong> {{ recipe.How }} <br>
+            <form action="/update_recipe/{{ recipe.id }}" method="get">
+                <button type="submit">Update</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/add_recipe">Add a new Recipe?</a>
+    <script>
+        // Function to hide the warning message after a specified duration
+        setTimeout(function() {
+            var warningElement = document.getElementById('warning');
+            if (warningElement) {
+                warningElement.style.display = 'none';
+            }
+        }, 3000); // 3 sec
+    </script>
+
+</body>
+</html>
